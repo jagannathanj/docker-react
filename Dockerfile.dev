@@ -1,0 +1,17 @@
+## Base os
+FROM node:alpine
+
+## Set the working Directory
+WORKDIR '/app'
+
+# Copy content 
+COPY package.json .
+
+# Install npm
+RUN npm install
+
+#Copy all content to current working directpry
+COPY . .
+
+#Start the npm service
+CMD ["npm", "run", "start"]
